@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Welcome {{ current_user.username }}</h2>
+
+{% for food in foods %}
+<div class="card">
+    <img src="{{ url_for('static', filename='images/' + food.image) }}">
+    <h3>{{ food.name }}</h3>
+    <p>₹{{ food.price }}</p>
+    <a href="/add_to_cart/{{ food.id }}">
+        <button>Add to Cart</button>
+    </a>
+</div>
+{% endfor %}
+
+<a href="/cart">View Cart</a> |
+<a href="/logout">Logout</a>
+
+</body>
+</html>

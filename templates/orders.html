@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Order History</h2>
+
+{% for order in orders %}
+<p>{{ order.food_name }} - ₹{{ order.price }}</p>
+{% endfor %}
+
+<a href="/dashboard">Back</a>
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Your Cart</h2>
+
+{% for item in items %}
+{% set food = Food.query.get(item.food_id) %}
+<p>{{ food.name }} × {{ item.quantity }} = ₹{{ food.price * item.quantity }}</p>
+{% endfor %}
+
+<a href="/place_order"><button>Place Order</button></a>
+
+</body>
+</html>
